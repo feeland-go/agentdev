@@ -9,7 +9,7 @@ Execute the checklist phase-by-phase, commit after each completed phase, push to
 - [x] Phase 2: Runtime shell + config guardrails
 - [x] Phase 3: Queue/worker core correctness
 - [x] Phase 4: Pipeline 1/2 implementation safety
-- [ ] Phase 5: Memory system correctness
+- [x] Phase 5: Memory system correctness
 - [ ] Phase 6: Operator commands and reporting
 - [ ] Phase 7: End-to-end verification
 
@@ -28,6 +28,7 @@ Execute the checklist phase-by-phase, commit after each completed phase, push to
 - Phase 2 preflight check failed as expected without project `.env`; fail-fast behavior confirmed.
 - Phase 3 validation: worker logic currently scaffolding for stage transitions (`run_fetch`, `run_extract`, `run_synthesize`) and not yet full connector/synthesis integration. This is expected and deferred to Phase 4.
 - Phase 4 currently uses safe placeholder/mock fetch/LLM behavior for interface safety; real network/LLM integrations remain for later end-to-end deployment validation in Hermes.
+- Phase 5 validations passed on isolated sandbox run; no blocking error detected.
 
 ## Status
-**Phase 4 completed** - Pipeline 1/2 safety scaffolds implemented and minimally validated; preparing commit and push for Phase 4.
+**Phase 5 completed** - Memory module implemented with per-task append, stage-batch research map update, and final meta write; preparing commit and push for Phase 5.
