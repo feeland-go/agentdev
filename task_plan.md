@@ -5,8 +5,8 @@ Execute the checklist phase-by-phase, commit after each completed phase, push to
 
 ## Phases
 - [x] Phase 0: Git setup (init + remote)
-- [ ] Phase 1: Contract locking updates
-- [ ] Phase 2: Runtime shell + config guardrails
+- [x] Phase 1: Contract locking updates
+- [x] Phase 2: Runtime shell + config guardrails
 - [ ] Phase 3: Queue/worker core correctness
 - [ ] Phase 4: Pipeline 1/2 implementation safety
 - [ ] Phase 5: Memory system correctness
@@ -24,7 +24,8 @@ Execute the checklist phase-by-phase, commit after each completed phase, push to
 - Push after each phase commit.
 
 ## Errors Encountered
-- None in current phase.
+- Phase 2 validation: `ModuleNotFoundError: No module named 'yaml'` in `project-template/orchestrator/setup.py`. Resolution: removed PyYAML dependency and implemented dependency-free YAML serialization helper.
+- Phase 2 preflight check failed as expected without project `.env`; fail-fast behavior confirmed.
 
 ## Status
-**Currently in Phase 1** - Applying contract-locking updates and preparing the Phase 1 commit.
+**Phase 2 completed** - Runtime guardrail scaffolds implemented in `project-template/`; preparing commit and push for Phase 2.

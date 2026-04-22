@@ -1,0 +1,44 @@
+queue:
+  min_relevance: 0.6
+  max_sources: 500
+  parallel_workers: 5
+  task_timeout: 180
+  max_retry: 2
+
+notifications:
+  telegram: true
+  summary_interval_minutes: 5
+  notify_per_task: true
+  notify_per_stage: true
+  notify_on_complete: true
+
+cron:
+  summary_every: "*/5 * * * *"
+  watchdog_every: "*/2 * * * *"
+  index_rebuild_every: "0 * * * *"
+
+synthesis:
+  max_content_per_doc: 6000
+  max_combined_content: 12000
+  extract_on_ingest: false
+
+llm:
+  primary: "ccs glm"
+  fallback:
+    - "ccs codex"
+    - "ccs claude"
+  timeout: 120
+  max_retry: 3
+  retry_delay: 5
+
+report:
+  include_source_index: true
+  include_further_research: true
+
+memory:
+  enabled: true
+  auto_append_per_task: true
+  auto_update_research_map: true
+  auto_write_meta: true
+  update_mode: "extract_stage_batch"
+  max_working_size_kb: 500
