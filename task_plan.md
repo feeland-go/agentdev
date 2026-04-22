@@ -10,7 +10,7 @@ Execute the checklist phase-by-phase, commit after each completed phase, push to
 - [x] Phase 3: Queue/worker core correctness
 - [x] Phase 4: Pipeline 1/2 implementation safety
 - [x] Phase 5: Memory system correctness
-- [ ] Phase 6: Operator commands and reporting
+- [x] Phase 6: Operator commands and reporting
 - [ ] Phase 7: End-to-end verification
 
 ## Key Questions
@@ -29,6 +29,7 @@ Execute the checklist phase-by-phase, commit after each completed phase, push to
 - Phase 3 validation: worker logic currently scaffolding for stage transitions (`run_fetch`, `run_extract`, `run_synthesize`) and not yet full connector/synthesis integration. This is expected and deferred to Phase 4.
 - Phase 4 currently uses safe placeholder/mock fetch/LLM behavior for interface safety; real network/LLM integrations remain for later end-to-end deployment validation in Hermes.
 - Phase 5 validations passed on isolated sandbox run; no blocking error detected.
+- Phase 6 validations passed (`notify.py`, `indexer.py`, `audit.py`) with expected env-dependent output.
 
 ## Status
-**Phase 5 completed** - Memory module implemented with per-task append, stage-batch research map update, and final meta write; preparing commit and push for Phase 5.
+**Phase 6 completed** - Operator command/reporting modules implemented and minimally validated; preparing commit and push for Phase 6.
